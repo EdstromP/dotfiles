@@ -4,11 +4,29 @@
 " Aktivera tab-expansion i command
 set nocompatible
 
+" starta pathogen
+"execute pathogen#infect()
+
+"""" Start Vundle-kod
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" plugins
+Plugin 'davidhalter/jedi-vim'
+
+call vundle#end()
+filetype plugin indent on
+
+"""" Slut Vundle-kod
+
+
 " Tillåt radering av företående tecken med backspace i edit-mode
 set backspace=indent,eol,start
 
 " Ändra colorscheme
-colorscheme elflord
+colorscheme desert
 set background=dark
 
 " Visa radnummer
@@ -18,7 +36,7 @@ set number
 set history=500
 
 " Aktivera syntax highlighting
-filetype plugin indent on
+"filetype plugin indent on
 syntax on
 
 
@@ -42,4 +60,3 @@ set wildmenu
 
 " Spara undo-historik
 set undodir=~/.vimundo/
-
